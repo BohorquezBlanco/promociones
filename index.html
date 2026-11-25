@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Friday 2027 | Diplomados Gestión 2027 – USIP Escuela de Postgrado</title>
+<meta name="description" content="Black Friday en diplomados gestión 2027. Promoción del 25 al 29 de noviembre. Inscripciones abiertas en la Escuela de Postgrado de la Universidad Simón I. Patiño.">
+<meta property="og:title" content="Black Friday 2027 – Diplomados USIP">
+<meta property="og:description" content="Del 25 al 29 de noviembre. Elige tu diplomado gestión 2027.">
+<meta property="og:image" content="images/banner-blackfriday.jpg">
+<meta name="theme-color" content="#053b27">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<canvas id="snow" aria-hidden="true"></canvas>
+<div class="lights" id="lights" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="brand" href="#inicio">
+    <img src="images/logo.png" alt="Logotipo institucional" onerror="this.style.display='none'">
+    <span>USIP · Escuela de Postgrado</span>
+  </a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav id="menu">
+    <a href="#galeria">Galería</a><a href="#asesor">Encuentra el tuyo</a><a href="#diplomados">Diplomados</a><a href="#contacto">Contacto</a>
+    <a class="btn btn-sm promo" id="navCta" data-wa href="#">WhatsApp</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="logo-slot"><img src="images/logo.png" alt="Logotipo de la institución" onerror="this.parentNode.innerHTML='<span>Espacio para logotipo institucional</span>'"></div>
+  <p class="kicker">Campaña especial Black Friday</p>
+  <div class="bf-big" aria-hidden="true"><span>BLACK</span><span>FRIDAY</span><em>2027</em></div>
+  <h1>¡El futuro profesional comienza aquí!</h1>
+  <p class="sub">Aprovecha nuestra promoción especial en todos los diplomados de la gestión 2027.</p>
+  <p class="dates">Del 25 al 29 de noviembre</p>
+  <div class="actions">
+    <a class="btn btn-gold btn-lg cupon promo" data-wa data-msg="Hola, quiero obtener mi cupón de la promoción Black Friday de los diplomados 2027." href="#" target="_blank" rel="noopener">¡Obtén tu cupón aquí!!!</a>
+    <a class="btn btn-ghost promo" data-wa href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+  </div>
+  <p class="tag">BLACK FRIDAY 2027 · ¡Prepárate hoy para transformar tu futuro profesional!</p>
+</section>
+
+<section class="countdown" aria-labelledby="cdTitle">
+  <h2 id="cdTitle">¡La promoción termina pronto!</h2>
+  <div class="cd" id="cd" role="timer" aria-live="off">
+    <div><b id="d">00</b><span>Días</span></div><div><b id="h">00</b><span>Horas</span></div>
+    <div><b id="m">00</b><span>Minutos</span></div><div><b id="s">00</b><span>Segundos</span></div>
+  </div>
+  <a class="btn btn-gold btn-lg cupon promo" data-wa data-msg="Hola, quiero obtener mi cupón de la promoción Black Friday de los diplomados 2027." href="#" target="_blank" rel="noopener" style="margin-top:24px">¡Obtén tu cupón aquí!!!</a>
+  <p class="ended-msg" id="endMsg" hidden>¡LA PROMOCIÓN HA FINALIZADO!</p>
+</section>
+
+<section id="galeria" class="wrap reveal">
+  <h2 class="title">Nuestros diplomados 2027</h2>
+  <figure class="banner ph"><img src="images/banner-blackfriday.jpg" alt="Banner Black Friday diplomados" onerror="this.remove()"><figcaption>Black Friday · Diplomados 2027</figcaption></figure>
+  <div class="gallery">
+    <figure class="ph"><img src="images/diplomado-1.jpg" alt="Diplomado Fullstack Developer" onerror="this.remove()"><figcaption>Fullstack Developer</figcaption></figure>
+    <figure class="ph"><img src="images/diplomado-2.jpg" alt="Diplomado destacado 2027" onerror="this.remove()"><figcaption>Diplomado destacado</figcaption></figure>
+    <figure class="ph"><img src="images/diplomado-3.jpg" alt="Diplomado destacado 2027" onerror="this.remove()"><figcaption>Gestión 2027</figcaption></figure>
+  </div>
+</section>
+
+<section id="asesor" class="wrap reveal">
+  <h2 class="title">Encuentra tu diplomado ideal</h2>
+  <p class="lead">Toca el área que te interesa y te mostramos opciones al instante.</p>
+  <div class="chips big" id="pick"></div>
+  <div class="recs" id="recs"></div>
+</section>
+
+<section id="diplomados" class="wrap">
+  <h2 class="title">¡Elige tu próximo diplomado!</h2>
+  <p class="lead">Más oportunidades, más conocimientos y un futuro profesional lleno de posibilidades.</p>
+  <div class="tools">
+    <input type="search" id="q" placeholder="Buscar diplomado por nombre…" aria-label="Buscar diplomado">
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por área"></div>
+  </div>
+  <p id="count" class="lead" aria-live="polite"></p>
+  <div class="grid" id="grid"></div>
+  <p id="none" class="lead" hidden>No encontramos diplomados con ese criterio. Prueba otra palabra o área.</p>
+</section>
+
+<section id="contacto" class="wrap contact reveal">
+  <h2 class="title">¿Tienes dudas? ¡Estamos para ayudarte!</h2>
+  <div class="phones" data-phones></div>
+</section>
+
+<section class="closing reveal">
+  <h2>¡No dejes pasar esta oportunidad!</h2>
+  <p>Invierte en tu formación profesional y prepárate para nuevos desafíos en 2027.</p>
+  <p class="dates">Black Friday | Del 25 al 29 de noviembre</p>
+  <a class="btn btn-gold btn-lg promo" data-wa href="#" target="_blank" rel="noopener">¡Quiero aprovechar la promoción!</a>
+  <div class="phones" data-phones></div>
+</section>
+</main>
+
+<footer>
+  <img src="images/logo.png" alt="Logotipo" onerror="this.style.display='none'">
+  <p><strong>Universidad Simón I. Patiño · Escuela de Postgrado</strong></p>
+  <p class="social"><a href="#" aria-label="Facebook">Facebook</a> <a href="#" aria-label="Instagram">Instagram</a> <a href="#" aria-label="TikTok">TikTok</a> <small>(agrega aquí tus enlaces)</small></p>
+  <p>© 2026 Todos los derechos reservados.</p>
+</footer>
+
+<a class="float-wa promo" data-wa href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">💬</a>
+
+<dialog id="dlg"><form method="dialog"><h3 id="dlgT"></h3><p>Elige un número para recibir información por WhatsApp:</p><div class="phones" id="dlgP"></div><button class="btn btn-ghost">Cerrar</button></form></dialog>
+<script src="js/script.js"></script>
+</body>
+</html>
