@@ -8,45 +8,51 @@ const CONFIG = {
   message: "Hola, estoy interesado/a en conocer más sobre la promoción Black Friday de los diplomados 2027. Quisiera recibir información."
 };
 const CATS = {ing:"Ingeniería y Tecnología",der:"Derecho",edu:"Educación",adm:"Administración y Negocios",seg:"Seguridad y Salud",mkt:"Marketing y Datos"};
-const ICONS = {ing:"⚙️",der:"⚖️",edu:"🎓",adm:"📊",seg:"🦺",mkt:"📈"};
-/* [nombre, categoría, icono opcional] */
+
+/* [nombre, categoría, ruta de la imagen]  → cambia aquí la imagen de cada diplomado */
 const DIPLOMADOS = [
-["INGENIERÍA DE DISEÑO ELECTROMECÁNICO ASISTIDO POR COMPUTADORA CAD-CAM","ing","📐"],
-["DERECHO ADMINISTRATIVO Y DEFENSA LEGAL DEL ESTADO","der"],
-["SEGURIDAD Y SALUD OCUPACIONAL EN TRABAJOS DE ALTO RIESGO","seg"],
-["EDUCACIÓN SUPERIOR BASADO EN COMPETENCIAS DIGITALES E INTELIGENCIA ARTIFICIAL","edu"],
-["COMERCIO EXTERIOR Y ADMINISTRACIÓN ADUANERA","adm","🚢"],
-["DERECHO LABORAL, PROCESAL LABORAL Y SEGURIDAD SOCIAL","der"],
-["INGENIERÍA DE DISEÑO EN INSTALACIONES ELÉCTRICAS DOMICILIARIAS E INDUSTRIALES","ing","💡"],
-["ADMINISTRACIÓN Y GESTIÓN DE RECURSOS HUMANOS","adm","👥"],
-["DERECHO CONSTITUCIONAL, CONTROL DE CONVENCIONALIDAD Y ACCIONES DE DEFENSA","der"],
-["CIBERSEGURIDAD Y ETHICAL HACKING CON INTELIGENCIA ARTIFICIAL","ing","🔐"],
-["GESTIÓN, REGLAMENTACIÓN Y EVALUACIÓN AMBIENTAL","seg","🌿"],
-["DERECHO DE FAMILIA, PROCESAL FAMILIAR E INTERPRETACIÓN JURISPRUDENCIAL","der"],
-["GESTIÓN DE LA CADENA DE SUMINISTRO Y LOGÍSTICA APLICADA","adm","🚚"],
-["INGENIERÍA DE MANTENIMIENTO INDUSTRIAL Y CONFIABILIDAD OPERACIONAL","ing","🔧"],
-["FULLSTACK DEVELOPER BACKEND Y FRONTEND","ing","💻"],
-["MARKETING DIGITAL Y DISEÑO MULTIMEDIA CON INTELIGENCIA ARTIFICIAL","mkt","🎨"],
-["DERECHO CIVIL, PROCESAL CIVIL, MENCIÓN EN ARGUMENTACIÓN JURÍDICA Y LITIGACIÓN","der"],
-["AUTOMATIZACIÓN, CONTROL Y OPTIMIZACIÓN DE PROCESOS INDUSTRIALES","ing","🤖"],
-["EXCEL Y POWER BI: NEGOCIOS INTELIGENTES Y ANÁLISIS DE DATOS","mkt","📊"],
-["DERECHO PENAL Y PROCESAL PENAL","der"],
-["DERECHO NOTARIAL CON MENCIÓN EN INTELIGENCIA ARTIFICIAL Y TECNOLOGÍAS DIGITALES","der"],
-["GESTIÓN DE LA SEGURIDAD Y SALUD EN EL TRABAJO","seg","⛑️"],
-["ARBITRAJE Y CONCILIACIÓN JUDICIAL, MENCIÓN EN JUSTICIA RESTAURATIVA","der","🤝"],
-["ADMINISTRACIÓN Y GESTIÓN DE EMPRESAS","adm","🏢"],
-["DERECHO ADMINISTRATIVO, MENCIÓN EN RESPONSABILIDAD POR LA FUNCIÓN PÚBLICA Y LEY 1178","der"],
-["EXCEL Y POWER BI, MENCIÓN EN DATA ANALYTICS Y BUSINESS INTELLIGENCE","mkt","📉"],
-["EDUCACIÓN SUPERIOR BASADO EN COMPETENCIAS, MENCIÓN EN HERRAMIENTAS DIGITALES E INTELIGENCIA ARTIFICIAL","edu","🧠"]
+["INGENIERÍA DE DISEÑO ELECTROMECÁNICO ASISTIDO POR COMPUTADORA CAD-CAM","ing","img/diplomado1.jfif"],
+["DERECHO ADMINISTRATIVO Y DEFENSA LEGAL DEL ESTADO","der","img/diplomado2.jfif"],
+["SEGURIDAD Y SALUD OCUPACIONAL EN TRABAJOS DE ALTO RIESGO","seg","img/diplomado3.jpg"],
+["EDUCACIÓN SUPERIOR BASADO EN COMPETENCIAS DIGITALES E INTELIGENCIA ARTIFICIAL","edu","img/diplomado4.jpg"],
+["COMERCIO EXTERIOR Y ADMINISTRACIÓN ADUANERA","adm","img/diplomado5.jpg"],
+["DERECHO LABORAL, PROCESAL LABORAL Y SEGURIDAD SOCIAL","der","img/diplomado6.jpg"],
+["INGENIERÍA DE DISEÑO EN INSTALACIONES ELÉCTRICAS DOMICILIARIAS E INDUSTRIALES","ing","img/diplomado7.jpg"],
+["ADMINISTRACIÓN Y GESTIÓN DE RECURSOS HUMANOS","adm","img/diplomado8.jpg"],
+["DERECHO CONSTITUCIONAL, CONTROL DE CONVENCIONALIDAD Y ACCIONES DE DEFENSA","der","img/diplomado9.jpg"],
+["CIBERSEGURIDAD Y ETHICAL HACKING CON INTELIGENCIA ARTIFICIAL","ing","img/diplomado10.jpg"],
+["GESTIÓN, REGLAMENTACIÓN Y EVALUACIÓN AMBIENTAL","seg","img/diplomado11.jpg"],
+["DERECHO DE FAMILIA, PROCESAL FAMILIAR E INTERPRETACIÓN JURISPRUDENCIAL","der","img/diplomado12.jpg"],
+["GESTIÓN DE LA CADENA DE SUMINISTRO Y LOGÍSTICA APLICADA","adm","img/diplomado13.jpg"],
+["INGENIERÍA DE MANTENIMIENTO INDUSTRIAL Y CONFIABILIDAD OPERACIONAL","ing","img/diplomado14.jpg"],
+["FULLSTACK DEVELOPER BACKEND Y FRONTEND","ing","img/diplomado15.jpg"],
+["MARKETING DIGITAL Y DISEÑO MULTIMEDIA CON INTELIGENCIA ARTIFICIAL","mkt","img/diplomado16.jpg"],
+["DERECHO CIVIL, PROCESAL CIVIL, MENCIÓN EN ARGUMENTACIÓN JURÍDICA Y LITIGACIÓN","der","img/diplomado17.jpg"],
+["AUTOMATIZACIÓN, CONTROL Y OPTIMIZACIÓN DE PROCESOS INDUSTRIALES","ing","img/diplomado18.jpg"],
+["EXCEL Y POWER BI: NEGOCIOS INTELIGENTES Y ANÁLISIS DE DATOS","mkt","img/diplomado19.jpg"],
+["DERECHO PENAL Y PROCESAL PENAL","der","img/diplomado20.jpg"],
+["DERECHO NOTARIAL CON MENCIÓN EN INTELIGENCIA ARTIFICIAL Y TECNOLOGÍAS DIGITALES","der","img/diplomado21.jpg"],
+["GESTIÓN DE LA SEGURIDAD Y SALUD EN EL TRABAJO","seg","img/diplomado22.jpg"],
+["ARBITRAJE Y CONCILIACIÓN JUDICIAL, MENCIÓN EN JUSTICIA RESTAURATIVA","der","img/diplomado23.jpg"],
+["ADMINISTRACIÓN Y GESTIÓN DE EMPRESAS","adm","img/diplomado24.jpg"],
+["DERECHO ADMINISTRATIVO, MENCIÓN EN RESPONSABILIDAD POR LA FUNCIÓN PÚBLICA Y LEY 1178","der","img/diplomado25.jpg"],
+["EXCEL Y POWER BI, MENCIÓN EN DATA ANALYTICS Y BUSINESS INTELLIGENCE","mkt","img/diplomado26.jpg"],
+["EDUCACIÓN SUPERIOR BASADO EN COMPETENCIAS, MENCIÓN EN HERRAMIENTAS DIGITALES E INTELIGENCIA ARTIFICIAL","edu","img/diplomado27.jpg"]
 ];
+
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-/* ---------- WhatsApp ---------- */
+/* ---------- WhatsApp: asesor al azar ---------- */
 const waLink = (num, text = CONFIG.message) => `https://wa.me/${CONFIG.countryCode}${num}?text=${encodeURIComponent(text)}`;
 const waBtns = (text) => CONFIG.phones.map(n => `<a class="btn btn-wa promo" target="_blank" rel="noopener" href="${waLink(n, text)}">💬 +${CONFIG.countryCode} ${n}</a>`).join("");
-$$("[data-wa]").forEach(a => a.href = waLink(CONFIG.phones[0]));
+const rnd = () => CONFIG.phones[Math.floor(Math.random() * CONFIG.phones.length)];
+/* Cada clic en un botón [data-wa] abre WhatsApp con uno de los 4 números elegido al azar */
+$$("[data-wa]").forEach(a => a.href = waLink(rnd()));
+document.addEventListener("click", e => { const a = e.target.closest("[data-wa]"); if (a) a.href = waLink(rnd(), a.dataset.msg || CONFIG.message); }, true);
+const waRand = (label, msg, cls = "btn-wa") => `<a class="btn ${cls} promo" data-wa data-msg="${msg}" target="_blank" rel="noopener" href="#">${label}</a>`;
+const msgFor = n => `${CONFIG.message} Diplomado de interés: ${n}.`;
 $$("[data-phones]").forEach(el => el.innerHTML = waBtns());
 
 /* ---------- Tarjetas, búsqueda y filtros ---------- */
@@ -54,14 +60,19 @@ const grid = $("#grid"), q = $("#q"), chips = $("#chips");
 let cat = "all";
 const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 chips.innerHTML = `<button class="chip on" data-c="all">Todos</button>` + Object.entries(CATS).map(([k, v]) => `<button class="chip" data-c="${k}">${v}</button>`).join("");
-grid.innerHTML = DIPLOMADOS.map(([n, c, i], idx) => `
+
+/* La imagen sale de la tercera posición de cada elemento del arreglo */
+grid.innerHTML = DIPLOMADOS.map(([n, c, img], idx) => `
  <article class="card" data-cat="${c}" data-name="${norm(n)}">
-  <span class="ico" aria-hidden="true">${i || ICONS[c]}</span>
+  <div class="thumb">
+    <b>DIPLOMADO<br>2027</b>
+    <img loading="lazy" src="${img}" alt="Diplomado en ${n}" onerror="this.remove()">
+  </div>
   <span class="bf">BLACK FRIDAY 2027</span>
   <h3>Diplomado en ${n}.</h3>
   <span class="open">✔ INSCRIPCIONES ABIERTAS</span>
   <button class="btn btn-gold promo more" data-i="${idx}">Más información</button>
-  <a class="btn btn-wa promo" target="_blank" rel="noopener" href="${waLink(CONFIG.phones[0], CONFIG.message + " Diplomado de interés: " + n + ".")}">Consultar por WhatsApp</a>
+  ${waRand("Consultar por WhatsApp", msgFor(n))}
  </article>`).join("");
 
 const cards = $$(".card");
@@ -74,17 +85,17 @@ function filter() {
 q.addEventListener("input", filter);
 chips.addEventListener("click", e => {
   const b = e.target.closest(".chip"); if (!b) return;
-  cat = b.dataset.c; $$(".chip").forEach(x => x.classList.toggle("on", x === b)); filter();
+  cat = b.dataset.c; $$(".chip", chips).forEach(x => x.classList.toggle("on", x === b)); filter();
 });
 filter();
 
-/* Diálogo "Más información" */
+/* ---------- Diálogo "Más información" ---------- */
 const dlg = $("#dlg");
 grid.addEventListener("click", e => {
   const b = e.target.closest(".more"); if (!b) return;
   const name = DIPLOMADOS[b.dataset.i][0];
   $("#dlgT").textContent = "Diplomado en " + name;
-  $("#dlgP").innerHTML = waBtns(CONFIG.message + " Diplomado de interés: " + name + ".");
+  $("#dlgP").innerHTML = waRand("Hablar con un asesor", msgFor(name), "btn-gold") + '<p style="width:100%">o elige un número:</p>' + waBtns(msgFor(name));
   dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "");
 });
 
@@ -113,6 +124,16 @@ for (let i = 0; i < 40; i++) { const e = document.createElement("i"); e.style.co
 /* ---------- Aparición al hacer scroll ---------- */
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .1 });
 $$(".card, .reveal").forEach(el => io.observe(el));
+
+/* ---------- Interacción: encuentra tu diplomado ---------- */
+const pick = $("#pick"), recs = $("#recs");
+pick.innerHTML = Object.entries(CATS).map(([k, v]) => `<button class="chip" data-c="${k}">${v}</button>`).join("");
+pick.addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  $$(".chip", pick).forEach(x => x.classList.toggle("on", x === b));
+  const list = DIPLOMADOS.filter(d => d[1] === b.dataset.c).sort(() => Math.random() - .5).slice(0, 3);
+  recs.innerHTML = list.map(([n]) => `<div class="rec"><span class="bf">BLACK FRIDAY 2027</span><h3>Diplomado en ${n}.</h3>${waRand("Lo quiero · WhatsApp", msgFor(n))}</div>`).join("");
+});
 
 /* ---------- Nieve (canvas, optimizada) ---------- */
 if (!reduce) {
