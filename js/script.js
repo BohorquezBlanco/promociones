@@ -1,3 +1,5 @@
+
+
 /* =========================================================
    CONFIGURACIÓN (editar aquí para futuras campañas)
    ========================================================= */
@@ -38,6 +40,7 @@ const DIPLOMADOS = [
 ["DERECHO ADMINISTRATIVO, MENCIÓN EN RESPONSABILIDAD POR LA FUNCIÓN PÚBLICA Y LEY 1178","der","img/diplomado25.jfif"],
 ];
 
+
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -70,7 +73,7 @@ grid.innerHTML = DIPLOMADOS.map(([n, c, img], idx) => `
   <h3>Diplomado en ${n}.</h3>
   <span class="open">✔ INSCRIPCIONES ABIERTAS</span>
   <button class="btn btn-gold promo more" data-i="${idx}">Más información</button>
-  ${waRand("Consultar por WhatsApp", msgFor(n))}
+  ${waRand("Hablar con una asesora", msgFor(n))}
  </article>`).join("");
 
 const cards = $$(".card");
@@ -93,7 +96,7 @@ grid.addEventListener("click", e => {
   const b = e.target.closest(".more"); if (!b) return;
   const name = DIPLOMADOS[b.dataset.i][0];
   $("#dlgT").textContent = "Diplomado en " + name;
-  $("#dlgP").innerHTML = waRand("Hablar con un asesor", msgFor(name), "btn-gold") + '<p style="width:100%">o elige un número:</p>' + waBtns(msgFor(name));
+  $("#dlgP").innerHTML = waRand("Hablar con una asesora", msgFor(name), "btn-gold") + '<p style="width:100%">o elige un número:</p>' + waBtns(msgFor(name));
   dlg.showModal ? dlg.showModal() : dlg.setAttribute("open", "");
 });
 
@@ -125,6 +128,7 @@ $$(".card, .reveal").forEach(el => io.observe(el));
 
 /* ---------- Interacción: encuentra tu diplomado ---------- */
 const pick = $("#pick"), recs = $("#recs");
+if (pick && recs) { /* solo si la sección existe en el HTML; así un faltante no detiene la nieve */
 pick.innerHTML = Object.entries(CATS).map(([k, v]) => `<button class="chip" data-c="${k}">${v}</button>`).join("");
 pick.addEventListener("click", e => {
   const b = e.target.closest(".chip"); if (!b) return;
@@ -132,6 +136,7 @@ pick.addEventListener("click", e => {
   const list = DIPLOMADOS.filter(d => d[1] === b.dataset.c).sort(() => Math.random() - .5).slice(0, 3);
   recs.innerHTML = list.map(([n]) => `<div class="rec"><span class="bf">BLACK FRIDAY 2027</span><h3>Diplomado en ${n}.</h3>${waRand("Lo quiero · WhatsApp", msgFor(n))}</div>`).join("");
 });
+}
 
 /* ---------- Nieve (canvas, optimizada) ---------- */
 if (!reduce) {
